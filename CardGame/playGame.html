@@ -1,0 +1,1871 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WAR CARD GAME</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="cards.css" />
+  </head>
+
+  <body>     
+    <div class="rootContainer">
+      <header>STAR WARS - CARD GAME</header>
+      <nav>
+        <a href="main.html">Main</a> ||
+        <a href="rules.html">Game Rules</a> ||
+        <a href="cards.html">Deck Cards</a>      
+      </nav>
+      <div><button id="playGame" class="playButton">Play Game</button></div>
+      <div><button id="playTurn" class="playTurn" ; style="display: none;">Play Turn</button></div>
+      <div class="gameBoard">
+        <div id="overlay" class="overlay"> <div id="gameOverMessage" class = "gameOver" >
+          <p id="gameOverText"></p>
+          <p></p>
+      </div></div>
+        <div id="backCardLeft" class="cardBack leftPlayer">
+          <p>Player One score: <span id="playerOnePoints">26</span></p> 
+          
+        </div>
+        <div id="gameOverMessage" class = "gameOver" >
+          <p id="gameOverText"></p>
+          <p></p>
+      </div>
+        <div id="game" class="game">
+          <div id="player1Move" class="player1Move"></div>
+          <div id="player2Move" class="player2Move"></div>
+        </div>
+       
+        <div id="backCardRight" class="cardBack rightPlayer">
+        
+          <p>Player Two score: <span id="playerTwoPoints">26</p>
+        </div>
+      </div>
+    </div>
+
+    <div id ="deck" class="deck " style ="display:none">
+    <div class="suits">
+      <div class="hearts">
+        <div id="2H" data-value="2" class="card formatRow">
+          <div class="cardValue colorRed numberLogoAdj">
+            2
+            <img
+              class="numberLogo"
+              src="images/heart.svg"
+              alt="Heart Number Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/heart.svg"
+              alt="Heart Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems colorRed numberLogoAdj">
+            2
+            <img
+              class="numberLogo"
+              src="images/heart.svg"
+              alt="Heart Number Logo."
+            />
+          </div>
+        </div>
+        <div id="3H" data-value="3" class="card formatRow">
+          <div class="cardValue colorRed numberLogoAdj">
+            3
+            <img
+              class="numberLogo"
+              src="images/heart.svg"
+              alt="Heart Number Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/heart.svg"
+              alt="Heart Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems colorRed numberLogoAdj">
+            3
+            <img
+              class="numberLogo"
+              src="images/heart.svg"
+              alt="Heart Number Logo."
+            />
+          </div>
+        </div>
+        <div id="4H" data-value="4" class="card formatRow">
+          <div class="cardValue colorRed numberLogoAdj">
+            4
+            <img
+              class="numberLogo"
+              src="images/heart.svg"
+              alt="Heart Number Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/heart.svg"
+              alt="Heart Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/heart.svg"
+              alt="Heart Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems colorRed numberLogoAdj">
+            4
+            <img
+              class="numberLogo"
+              src="images/heart.svg"
+              alt="Heart Number Logo."
+            />
+          </div>
+        </div>
+        <div id="5H" data-value="5" class="card formatRow">
+          <div class="cardValue colorRed numberLogoAdj">
+            5
+            <img
+              class="numberLogo"
+              src="images/heart.svg"
+              alt="Heart Number Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/heart.svg"
+              alt="Heart Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/heart.svg"
+              alt="Heart Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems colorRed numberLogoAdj">
+            5
+            <img
+              class="numberLogo"
+              src="images/heart.svg"
+              alt="Heart Number Logo."
+            />
+          </div>
+        </div>
+        <div id="6H" data-value="6" class="card formatRow">
+          <div class="cardValue colorRed numberLogoAdj">
+            6
+            <img
+              class="numberLogo"
+              src="images/heart.svg"
+              alt="Heart Number Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/heart.svg"
+              alt="Heart Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/heart.svg"
+              alt="Heart Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems colorRed numberLogoAdj">
+            6
+            <img
+              class="numberLogo"
+              src="images/heart.svg"
+              alt="Heart Number Logo."
+            />
+          </div>
+        </div>
+        <div id="7H" data-value="7" class="card formatRow">
+          <div class="cardValue colorRed numberLogoAdj">
+            7
+            <img
+              class="numberLogo"
+              src="images/heart.svg"
+              alt="Heart Number Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/heart.svg"
+              alt="Heart Logo."
+            />
+          </div>
+          <div class="imageFormat centerUp">
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/heart.svg"
+              alt="Heart Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems colorRed numberLogoAdj">
+            7
+            <img
+              class="numberLogo"
+              src="images/heart.svg"
+              alt="Heart Number Logo."
+            />
+          </div>
+        </div>
+        <div id="8H" data-value="8" class="card formatRow">
+          <div class="cardValue colorRed numberLogoAdj">
+            8
+            <img
+              class="numberLogo"
+              src="images/heart.svg"
+              alt="Heart Number Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/heart.svg"
+              alt="Heart Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/heart.svg"
+              alt="Heart Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/heart.svg"
+              alt="Heart Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems colorRed numberLogoAdj">
+            8
+            <img
+              class="numberLogo"
+              src="images/heart.svg"
+              alt="Heart Number Logo."
+            />
+          </div>
+        </div>
+        <div id="9H" data-value="9" class="card formatRow">
+          <div class="cardValue colorRed numberLogoAdj">
+            9
+            <img
+              class="numberLogo"
+              src="images/heart.svg"
+              alt="Heart Number Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/heart.svg"
+              alt="Heart Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/heart.svg"
+              alt="Heart Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/heart.svg"
+              alt="Heart Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/heart.svg"
+              alt="Heart Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems colorRed numberLogoAdj">
+            9
+            <img
+              class="numberLogo"
+              src="images/heart.svg"
+              alt="Heart Number Logo."
+            />
+          </div>
+        </div>
+        <div id="10H" data-value="10" class="card formatRow">
+          <div class="cardValue colorRed numberLogoAdj">
+            10
+            <img
+              class="numberLogo"
+              src="images/heart.svg"
+              alt="Heart Number Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/heart.svg"
+              alt="Heart Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/heart.svg"
+              alt="Heart Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/heart.svg"
+              alt="Heart Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/heart.svg"
+              alt="Heart Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/heart.svg"
+              alt="Heart Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems colorRed numberLogoAdj">
+            10
+            <img
+              class="numberLogo"
+              src="images/heart.svg"
+              alt="Heart Number Logo."
+            />
+          </div>
+        </div>
+        <div id="QH" data-value="11" class="card formatRow">
+          <div class="cardValue colorRed numberLogoAdj">
+            Q
+            <img
+              class="numberLogo"
+              src="images/heart.svg"
+              alt="Heart NumberLogo."
+            />
+          </div>
+          <div class="imageFormatFigures">
+            <img
+              class="queenLogo"
+              src="images/queen-red.svg"
+              alt="Heart Logo."
+            />
+            <div class="cardTextFormatRed">QUEEN</div>
+          </div>
+          <div class="cardValue rotateItems colorRed numberLogoAdj">
+            Q
+            <img
+              class="numberLogo"
+              src="images/heart.svg"
+              alt="Heart Number Logo."
+            />
+          </div>
+        </div>
+        <div id="JH" data-value="12" class="card formatRow">
+          <div class="cardValue colorRed numberLogoAdj">
+            J
+            <img
+              class="numberLogo"
+              src="images/heart.svg"
+              alt="Heart NumberLogo."
+            />
+          </div>
+          <div class="imageFormatFigures">
+            <img class="jackLogo" src="images/jack-red.svg" alt="Heart Logo." />
+            <div class="cardTextFormatRed">JACK</div>
+          </div>
+          <div class="cardValue rotateItems colorRed numberLogoAdj">
+            J
+            <img
+              class="numberLogo"
+              src="images/heart.svg"
+              alt="Heart Number Logo."
+            />
+          </div>
+        </div>
+        <div id="KH" data-value="13" class="card formatRow">
+          <div class="cardValue colorRed numberLogoAdj">
+            K
+            <img
+              class="numberLogo"
+              src="images/heart.svg"
+              alt="Heart Number Logo."
+            />
+          </div>
+          <div class="imageFormatFigures">
+            <img class="kingLogo" src="images/king-red.svg" alt="King Logo." />
+            <div class="cardTextFormatRed">KING</div>
+          </div>
+          <div class="cardValue rotateItems colorRed numberLogoAdj">
+            K
+            <img
+              class="numberLogo"
+              src="images/heart.svg"
+              alt="Heart Number Logo."
+            />
+          </div>
+        </div>
+        <div id="AH" data-value="14" class="card formatRow">
+          <div class="cardValue colorRed numberLogoAdj">
+            A
+            <img
+              class="numberLogo"
+              src="images/heart.svg"
+              alt="Heart Number Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/heart.svg" alt="Heart Logo." />
+          </div>
+          <div class="cardValue rotateItems colorRed numberLogoAdj">
+            A
+            <img
+              class="numberLogo"
+              src="images/heart.svg"
+              alt="Heart Number Logo."
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="diamonds">
+        <div id="2D" data-value="2" class="card formatRow">
+          <div class="cardValue colorRed numberLogoAdj">
+            2
+            <img
+              class="numberLogo"
+              src="images/diamond.svg"
+              alt="Diamond Number Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems colorRed numberLogoAdj">
+            2
+            <img
+              class="numberLogo"
+              src="images/diamond.svg"
+              alt="Diamond Number Logo."
+            />
+          </div>
+        </div>
+        <div id="3D" data-value="3" class="card formatRow">
+          <div class="cardValue colorRed numberLogoAdj">
+            3
+            <img
+              class="numberLogo"
+              src="images/diamond.svg"
+              alt="Diamond Number Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems colorRed numberLogoAdj">
+            3
+            <img
+              class="numberLogo"
+              src="images/diamond.svg"
+              alt="Diamond Number Logo."
+            />
+          </div>
+        </div>
+        <div id="4D" data-value="4" class="card formatRow">
+          <div class="cardValue colorRed numberLogoAdj">
+            4
+            <img
+              class="numberLogo"
+              src="images/diamond.svg"
+              alt="Diamond Number Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems colorRed numberLogoAdj">
+            4
+            <img
+              class="numberLogo"
+              src="images/diamond.svg"
+              alt="Diamond Number Logo."
+            />
+          </div>
+        </div>
+        <div id="5D" data-value="5" class="card formatRow">
+          <div class="cardValue colorRed numberLogoAdj">
+            5
+            <img
+              class="numberLogo"
+              src="images/diamond.svg"
+              alt="Diamond Number Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems colorRed numberLogoAdj">
+            5
+            <img
+              class="numberLogo"
+              src="images/diamond.svg"
+              alt="Diamond Number Logo."
+            />
+          </div>
+        </div>
+        <div id="6D" data-value="6" class="card formatRow">
+          <div class="cardValue colorRed numberLogoAdj">
+            6
+            <img
+              class="numberLogo"
+              src="images/diamond.svg"
+              alt="Diamond Number Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/diamond.svg"
+              alt="Heart Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems colorRed numberLogoAdj">
+            6
+            <img
+              class="numberLogo"
+              src="images/diamond.svg"
+              alt="Diamond Number Logo."
+            />
+          </div>
+        </div>
+        <div id="7D" data-value="7" class="card formatRow">
+          <div class="cardValue colorRed numberLogoAdj">
+            7
+            <img
+              class="numberLogo"
+              src="images/diamond.svg"
+              alt="Diamond Number Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+          </div>
+          <div class="imageFormat centerUp">
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems colorRed numberLogoAdj">
+            7
+            <img
+              class="numberLogo"
+              src="images/diamond.svg"
+              alt="Diamond Number Logo."
+            />
+          </div>
+        </div>
+        <div id="8D" data-value="8" class="card formatRow">
+          <div class="cardValue colorRed numberLogoAdj">
+            8
+            <img
+              class="numberLogo"
+              src="images/diamond.svg"
+              alt="Diamond Number Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems colorRed numberLogoAdj">
+            8
+            <img
+              class="numberLogo"
+              src="images/diamond.svg"
+              alt="Diamond Number Logo."
+            />
+          </div>
+        </div>
+        <div id="9D" data-value="9" class="card formatRow">
+          <div class="cardValue colorRed numberLogoAdj">
+            9
+            <img
+              class="numberLogo"
+              src="images/diamond.svg"
+              alt="Diamond Number Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems colorRed numberLogoAdj">
+            9
+            <img
+              class="numberLogo"
+              src="images/diamond.svg"
+              alt="Diamond Number Logo."
+            />
+          </div>
+        </div>
+        <div id="10D" data-value="10" class="card formatRow">
+          <div class="cardValue colorRed numberLogoAdj">
+            10
+            <img
+              class="numberLogo"
+              src="images/diamond.svg"
+              alt="Diamond Number Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems colorRed numberLogoAdj">
+            10
+            <img
+              class="numberLogo"
+              src="images/diamond.svg"
+              alt="Diamond Number Logo."
+            />
+          </div>
+        </div>
+        <div id="QD" data-value="11" class="card formatRow">
+          <div class="cardValue colorRed numberLogoAdj">
+            Q
+            <img
+              class="numberLogo"
+              src="images/diamond.svg"
+              alt="Diamond Number Logo."
+            />
+          </div>
+          <div class="imageFormatFigures">
+            <img
+              class="queenLogo"
+              src="images/queen-red.svg"
+              alt="Diamond Logo."
+            />
+            <div class="cardTextFormatRed">QUEEN</div>
+          </div>
+          <div class="cardValue rotateItems colorRed numberLogoAdj">
+            Q
+            <img
+              class="numberLogo"
+              src="images/diamond.svg"
+              alt="Diamond Number Logo."
+            />
+          </div>
+        </div>
+        <div id="JD" data-value="12" class="card formatRow">
+          <div class="cardValue colorRed numberLogoAdj">
+            J
+            <img
+              class="numberLogo"
+              src="images/diamond.svg"
+              alt="Diamond Number Logo."
+            />
+          </div>
+          <div class="imageFormatFigures">
+            <img
+              class="jackLogo"
+              src="images/jack-red.svg"
+              alt="Diamond Logo."
+            />
+            <div class="cardTextFormatRed">JACK</div>
+          </div>
+          <div class="cardValue rotateItems colorRed numberLogoAdj">
+            J
+            <img
+              class="numberLogo"
+              src="images/diamond.svg"
+              alt="Diamond Number Logo."
+            />
+          </div>
+        </div>
+        <div id="KD" data-value="13" class="card formatRow">
+          <div class="cardValue colorRed numberLogoAdj">
+            K
+            <img
+              class="numberLogo"
+              src="images/diamond.svg"
+              alt="Diamond Number Logo."
+            />
+          </div>
+          <div class="imageFormatFigures">
+            <img class="kingLogo" src="images/king-red.svg" alt="King Logo." />
+            <div class="cardTextFormatRed">KING</div>
+          </div>
+          <div class="cardValue rotateItems colorRed numberLogoAdj">
+            K
+            <img
+              class="numberLogo"
+              src="images/diamond.svg"
+              alt="Diamond Number Logo."
+            />
+          </div>
+        </div>
+        <div id="AD" data-value="14" class="card formatRow">
+          <div class="cardValue colorRed numberLogoAdj">
+            A
+            <img
+              class="numberLogo"
+              src="images/diamond.svg"
+              alt="Diamond Number Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img
+              class="logoSize"
+              src="images/diamond.svg"
+              alt="Diamond Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems colorRed numberLogoAdj">
+            A
+            <img
+              class="numberLogo"
+              src="images/diamond.svg"
+              alt="Diamond Number Logo."
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="spades">
+        <div id="2S" data-value="2" class="card formatRow">
+          <div class="cardValue numberLogoAdj">
+            2
+            <img
+              class="numberLogo"
+              src="images/spade.svg"
+              alt="Spade Number Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/spade.svg"
+              alt="Spade Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems numberLogoAdj">
+            2
+            <img
+              class="numberLogo"
+              src="images/spade.svg"
+              alt="Spade Number Logo."
+            />
+          </div>
+        </div>
+        <div id="3S" data-value="3" class="card formatRow">
+          <div class="cardValue numberLogoAdj">
+            3
+            <img
+              class="numberLogo"
+              src="images/spade.svg"
+              alt="Spade Number Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/spade.svg"
+              alt="Spade Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems numberLogoAdj">
+            3
+            <img
+              class="numberLogo"
+              src="images/spade.svg"
+              alt="Spade Number Logo."
+            />
+          </div>
+        </div>
+        <div id="4S" data-value="4" class="card formatRow">
+          <div class="cardValue numberLogoAdj">
+            4
+            <img
+              class="numberLogo"
+              src="images/spade.svg"
+              alt="Spade Number Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/spade.svg"
+              alt="Spade Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/spade.svg"
+              alt="Spade Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems numberLogoAdj">
+            4
+            <img
+              class="numberLogo"
+              src="images/spade.svg"
+              alt="Spade Number Logo."
+            />
+          </div>
+        </div>
+        <div id="5S" data-value="5" class="card formatRow">
+          <div class="cardValue numberLogoAdj">
+            5
+            <img
+              class="numberLogo"
+              src="images/spade.svg"
+              alt="Spade Number Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/spade.svg"
+              alt="Spade Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/spade.svg"
+              alt="Spade Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems numberLogoAdj">
+            5
+            <img
+              class="numberLogo"
+              src="images/spade.svg"
+              alt="Spade Number Logo."
+            />
+          </div>
+        </div>
+        <div id="6S" data-value="6" class="card formatRow">
+          <div class="cardValue numberLogoAdj">
+            6
+            <img
+              class="numberLogo"
+              src="images/spade.svg"
+              alt="Spade Number Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/spade.svg"
+              alt="Spade Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/spade.svg"
+              alt="Spade Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems numberLogoAdj">
+            6
+            <img
+              class="numberLogo"
+              src="images/spade.svg"
+              alt="Spade Number Logo."
+            />
+          </div>
+        </div>
+        <div id="7S" data-value="7" class="card formatRow">
+          <div class="cardValue numberLogoAdj">
+            7
+            <img
+              class="numberLogo"
+              src="images/spade.svg"
+              alt="Spade Number Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/spade.svg"
+              alt="Spade Logo."
+            />
+          </div>
+          <div class="imageFormat centerUp">
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/spade.svg"
+              alt="Spade Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems numberLogoAdj">
+            7
+            <img
+              class="numberLogo"
+              src="images/spade.svg"
+              alt="Spade Number Logo."
+            />
+          </div>
+        </div>
+        <div id="8S" data-value="8" class="card formatRow">
+          <div class="cardValue numberLogoAdj">
+            8
+            <img
+              class="numberLogo"
+              src="images/spade.svg"
+              alt="Spade Number Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/spade.svg"
+              alt="Spade Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/spade.svg"
+              alt="Spade Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/spade.svg"
+              alt="Spade Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems numberLogoAdj">
+            8
+            <img
+              class="numberLogo"
+              src="images/spade.svg"
+              alt="Spade Number Logo."
+            />
+          </div>
+        </div>
+        <div id="9S" data-value="9" class="card formatRow">
+          <div class="cardValue numberLogoAdj">
+            9
+            <img
+              class="numberLogo"
+              src="images/spade.svg"
+              alt="Spade Number Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/spade.svg"
+              alt="Spade Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/spade.svg"
+              alt="Spade Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/spade.svg"
+              alt="Spade Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/spade.svg"
+              alt="Spade Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems numberLogoAdj">
+            9
+            <img
+              class="numberLogo"
+              src="images/spade.svg"
+              alt="Spade Number Logo."
+            />
+          </div>
+        </div>
+        <div id="10S" data-value="10" class="card formatRow">
+          <div class="cardValue numberLogoAdj">
+            10
+            <img
+              class="numberLogo"
+              src="images/spade.svg"
+              alt="Spade Number Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/spade.svg"
+              alt="Spade Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/spade.svg"
+              alt="Spade Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/spade.svg"
+              alt="Spade Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/spade.svg"
+              alt="Spade Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/spade.svg"
+              alt="Spade Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems numberLogoAdj">
+            10
+            <img
+              class="numberLogo"
+              src="images/spade.svg"
+              alt="Spade Number Logo."
+            />
+          </div>
+        </div>
+        <div id="QS" data-value="11" class="card formatRow">
+          <div class="cardValue numberLogoAdj">
+            Q
+            <img
+              class="numberLogo"
+              src="images/spade.svg"
+              alt="Spade Number Logo."
+            />
+          </div>
+          <div class="imageFormatFigures">
+            <img
+              class="queenLogo"
+              src="images/queen-black.svg"
+              alt="Spade Logo."
+            />
+            <div class="cardTextFormat">QUEEN</div>
+          </div>
+          <div class="cardValue rotateItems numberLogoAdj">
+            Q
+            <img
+              class="numberLogo"
+              src="images/spade.svg"
+              alt="Spade Number Logo."
+            />
+          </div>
+        </div>
+        <div id="JS" data-value="12" class="card formatRow">
+          <div class="cardValue numberLogoAdj">
+            J
+            <img
+              class="numberLogo"
+              src="images/spade.svg"
+              alt="Spade Number Logo."
+            />
+          </div>
+          <div class="imageFormatFigures">
+            <img
+              class="jackLogo"
+              src="images/jack-black.svg"
+              alt="Spade Logo."
+            />
+            <div class="cardTextFormat">JACK</div>
+          </div>
+          <div class="cardValue rotateItems numberLogoAdj">
+            J
+            <img
+              class="numberLogo"
+              src="images/spade.svg"
+              alt="Spade Number Logo."
+            />
+          </div>
+        </div>
+        <div id="KS" data-value="13" class="card formatRow">
+          <div class="cardValue numberLogoAdj">
+            K
+            <img
+              class="numberLogo"
+              src="images/spade.svg"
+              alt="Spade Number Logo."
+            />
+          </div>
+          <div class="imageFormatFigures">
+            <img
+              class="kingLogo"
+              src="images/king-black.svg"
+              alt="King Logo."
+            />
+            <div class="cardTextFormat">KING</div>
+          </div>
+          <div class="cardValue rotateItems numberLogoAdj">
+            K
+            <img
+              class="numberLogo"
+              src="images/spade.svg"
+              alt="Spade Number Logo."
+            />
+          </div>
+        </div>
+        <div id="AS" data-value="14" class="card formatRow">
+          <div class="cardValue numberLogoAdj">
+            A
+            <img
+              class="numberLogo"
+              src="images/spade.svg"
+              alt="Spade Number Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/spade.svg" alt="Spade Logo." />
+          </div>
+          <div class="cardValue rotateItems numberLogoAdj">
+            A
+            <img
+              class="numberLogo"
+              src="images/spade.svg"
+              alt="Spade Number Logo."
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="clubs">
+        <div id="2C" data-value="2" class="card formatRow">
+          <div class="cardValue numberLogoAdj">
+            2
+            <img class="numberLogo" src="images/club.svg" alt="Clubs Logo." />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/club.svg" alt="Clubs Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/club.svg"
+              alt="Clubs Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems numberLogoAdj">
+            2
+            <img class="numberLogo" src="images/club.svg" alt="Clubs Logo." />
+          </div>
+        </div>
+        <div id="3C" data-value="3" class="card formatRow">
+          <div class="cardValue numberLogoAdj">
+            3
+            <img class="numberLogo" src="images/club.svg" alt="Clubs Logo." />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/club.svg" alt="Clubs Logo." />
+            <img class="logoSize" src="images/club.svg" alt="Clubs Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/club.svg"
+              alt="Clubs Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems numberLogoAdj">
+            3
+            <img class="numberLogo" src="images/club.svg" alt="Clubs Logo." />
+          </div>
+        </div>
+        <div id="4C" data-value="4" class="card formatRow">
+          <div class="cardValue numberLogoAdj">
+            4
+            <img class="numberLogo" src="images/club.svg" alt="Clubs Logo." />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/club.svg" alt="Clubs Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/club.svg"
+              alt="Clubs Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/club.svg" alt="Clubs Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/club.svg"
+              alt="Clubs Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems numberLogoAdj">
+            4
+            <img class="numberLogo" src="images/club.svg" alt="Clubs Logo." />
+          </div>
+        </div>
+        <div id="5C" data-value="5" class="card formatRow">
+          <div class="cardValue numberLogoAdj">
+            5
+            <img class="numberLogo" src="images/club.svg" alt="Clubs Logo." />
+          </div>
+          <div data-value="6" class="imageFormat">
+            <img class="logoSize" src="images/club.svg" alt="Clubs Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/club.svg"
+              alt="Clubs Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/club.svg" alt="Clubs Logo." />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/club.svg" alt="Clubs Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/club.svg"
+              alt="Clubs Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems numberLogoAdj">
+            5
+            <img class="numberLogo" src="images/club.svg" alt="Clubs Logo." />
+          </div>
+        </div>
+        <div id="6C" data-value="6" class="card formatRow">
+          <div class="cardValue numberLogoAdj">
+            6
+            <img class="numberLogo" src="images/club.svg" alt="Clubs Logo." />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/club.svg" alt="Clubs Logo." />
+            <img class="logoSize" src="images/club.svg" alt="Clubs Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/club.svg"
+              alt="Clubs Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/club.svg" alt="Clubs Logo." />
+            <img class="logoSize" src="images/club.svg" alt="Clubs Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/club.svg"
+              alt="Clubs Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems numberLogoAdj">
+            6
+            <img class="numberLogo" src="images/club.svg" alt="Clubs Logo." />
+          </div>
+        </div>
+        <div id="7C" data-value="7" class="card formatRow">
+          <div class="cardValue numberLogoAdj">
+            7
+            <img class="numberLogo" src="images/club.svg" alt="Clubs Logo." />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/club.svg" alt="Clubs Logo." />
+            <img class="logoSize" src="images/club.svg" alt="Clubs Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/club.svg"
+              alt="Clubs Logo."
+            />
+          </div>
+          <div class="imageFormat centerUp">
+            <img class="logoSize" src="images/club.svg" alt="Clubs Logo." />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/club.svg" alt="Clubs Logo." />
+            <img class="v" src="images/club.svg" alt="Clubs Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/club.svg"
+              alt="Clubs Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems numberLogoAdj">
+            7
+            <img class="numberLogo" src="images/club.svg" alt="Clubs Logo." />
+          </div>
+        </div>
+        <div id="8C" data-value="8" class="card formatRow">
+          <div class="cardValue numberLogoAdj">
+            8
+            <img class="numberLogo" src="images/club.svg" alt="Clubs Logo." />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/club.svg" alt="Clubs Logo." />
+            <img class="logoSize" src="images/club.svg" alt="Clubs Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/club.svg"
+              alt="Clubs Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/club.svg" alt="Clubs Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/club.svg"
+              alt="Clubs Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/club.svg" alt="Clubs Logo." />
+            <img class="logoSize" src="images/club.svg" alt="Clubs Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/club.svg"
+              alt="Clubs Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems numberLogoAdj">
+            8
+            <img class="numberLogo" src="images/club.svg" alt="Clubs Logo." />
+          </div>
+        </div>
+        <div id="9C" data-value="9" class="card formatRow">
+          <div class="cardValue numberLogoAdj">
+            9
+            <img class="numberLogo" src="images/club.svg" alt="Clubs Logo." />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/club.svg" alt="Clubs Logo." />
+            <img class="logoSize" src="images/club.svg" alt="Clubs Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/club.svg"
+              alt="Clubs Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/club.svg"
+              alt="Clubs Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/club.svg" alt="Clubs Logo." />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/club.svg" alt="Clubs Logo." />
+            <img class="logoSize" src="images/club.svg" alt="Clubs Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/club.svg"
+              alt="Clubs Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/club.svg"
+              alt="Clubs Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems numberLogoAdj">
+            9
+            <img class="numberLogo" src="images/club.svg" alt="Clubs Logo." />
+          </div>
+        </div>
+        <div id="10C" data-value="10" class="card formatRow">
+          <div class="cardValue numberLogoAdj">
+            10
+            <img
+              class="numberLogo"
+              src="images/club.svg"
+              alt="Clubs Number Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/club.svg" alt="Clubs Logo." />
+            <img class="logoSize" src="images/club.svg" alt="Clubs Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/club.svg"
+              alt="Clubs Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/club.svg"
+              alt="Clubs Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/club.svg" alt="Clubs Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/club.svg"
+              alt="Clubs Logo."
+            />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/club.svg" alt="Clubs Logo." />
+            <img class="logoSize" src="images/club.svg" alt="Clubs Logo." />
+            <img
+              class="logoSize rotateItems"
+              src="images/club.svg"
+              alt="Clubs Logo."
+            />
+            <img
+              class="logoSize rotateItems"
+              src="images/club.svg"
+              alt="Clubs Logo."
+            />
+          </div>
+          <div class="cardValue rotateItems numberLogoAdj">
+            10
+            <img
+              class="numberLogo"
+              src="images/club.svg"
+              alt="Clubs Number Logo."
+            />
+          </div>
+        </div>
+        <div id="QC" data-value="11" class="card formatRow">
+          <div class="cardValue numberLogoAdj">
+            Q
+            <img class="numberLogo" src="images/club.svg" alt="Clubs Logo." />
+          </div>
+          <div class="imageFormatFigures">
+            <img
+              class="queenLogo"
+              src="images/queen-black.svg"
+              alt="Clubs Logo."
+            />
+            <div class="cardTextFormat">QUEEN</div>
+          </div>
+          <div class="cardValue rotateItems numberLogoAdj">
+            Q
+            <img class="numberLogo" src="images/club.svg" alt="Clubs Logo." />
+          </div>
+        </div>
+        <div id="JC" data-value="12" class="card formatRow">
+          <div class="cardValue numberLogoAdj">
+            J
+            <img class="numberLogo" src="images/club.svg" alt="Clubs Logo." />
+          </div>
+          <div class="imageFormatFigures">
+            <img
+              class="jackLogo"
+              src="images/jack-black.svg"
+              alt="Clubs Logo."
+            />
+            <div class="cardTextFormat">JACK</div>
+          </div>
+          <div class="cardValue rotateItems numberLogoAdj">
+            J
+            <img class="numberLogo" src="images/club.svg" alt="Clubs Logo." />
+          </div>
+        </div>
+
+        <div id="KC" data-value="13" class="card formatRow">
+          <div class="cardValue numberLogoAdj">
+            K
+            <img class="numberLogo" src="images/club.svg" alt="Clubs Logo." />
+          </div>
+          <div class="imageFormatFigures">
+            <img
+              class="kingLogo"
+              src="images/king-black.svg"
+              alt="King Logo."
+            />
+            <div class="cardTextFormat">KING</div>
+          </div>
+          <div class="cardValue rotateItems numberLogoAdj">
+            K
+            <img class="numberLogo" src="images/club.svg" alt="Clubs Logo." />
+          </div>
+        </div>
+        <div id="AC" data-value="14" class="card formatRow">
+          <div class="cardValue numberLogoAdj">
+            A
+            <img class="numberLogo" src="images/club.svg" alt="Clubs Logo." />
+          </div>
+          <div class="imageFormat">
+            <img class="logoSize" src="images/club.svg" alt="Clubs Logo." />
+          </div>
+          <div class="cardValue rotateItems numberLogoAdj">
+            A
+            <img class="numberLogo" src="images/club.svg" alt="Clubs Logo." />
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+     </div> 
+    <script src="playGame.js"></script>
+  </body>
+</html>

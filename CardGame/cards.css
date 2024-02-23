@@ -1,0 +1,253 @@
+.deck{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-right: 3px;
+    margin-left: 3px;
+    background-color:green;
+}
+
+.suits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+    
+}
+.hearts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+    
+}
+
+.diamonds {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+    
+}
+
+.spades {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+    
+}
+
+.clubs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+    
+}
+.allDeckCards{
+    display: flex;
+    aspect-ratio: 3 / 4;
+    height: 13em;
+    border: 2px solid black;
+    border-radius: .50em;
+    background-color:oldlace;
+    position: relative;
+    left: 0;
+    right: 0;
+}
+.card, .backCardLeft, .backCardRight {
+    display: flex;
+    aspect-ratio: 3 / 4;
+    height: 13em;
+    border: 2px solid black;
+    border-radius: .50em;
+    background-color:oldlace;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+.player1Move .card, .player1Move .back{
+    animation-name: card-animationL;
+    animation-duration: .8s;
+    
+}
+
+.player2Move .card, .player2Move .back{
+    animation-name: card-animationR;
+    animation-duration: .8s;
+}
+
+
+.cardValue{
+display: flex;
+font-size: 25px;
+text-align: center;
+}
+
+.imageFormat{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+.logoSize{
+    width: 2em;
+    height: 2em; 
+    
+}
+
+.formatRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.rotateItems{
+    transform: rotate(180deg);
+}
+
+.colorRed{
+    color: red;
+}
+
+.centerUp{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-bottom: 90px;
+}
+
+.imageFormatFigures{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.kingLogo{
+    width: 3em;
+    height: 3em;
+    margin-bottom: 5px;
+    
+}
+.queenLogo{
+    width: 3em;
+    height: 3em;
+    margin-bottom: 5px;
+}
+
+.jackLogo{
+    width: 3em;
+    height: 3em;
+    margin-bottom: 5px;
+}
+
+.cardTextFormatRed{
+    text-decoration: 8px solid;
+    text-align: center;
+    color: red;
+    font-size: 15px;
+
+}
+
+.cardTextFormat{
+    text-decoration: 8px solid;
+    text-align: center;
+    font-size: 15px;
+
+}
+
+.numberLogo{
+    width: 20px;
+    height: 20px;
+    align-self: center;
+    
+}
+
+.numberLogoAdj{
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 600px) {
+    .card, .backCardLeft, .backCardRight {
+        display: flex;
+        aspect-ratio: 1.5 / 2;
+        height: 6.5em;
+        border: 1px solid black;
+        border-radius: .30em;
+        background-color:oldlace;
+        position: absolute;
+        left: 0;
+        right: 0;
+        animation-name: card-animation;
+        animation-duration: 2s;
+        animation-timing-function: ease; 
+    }
+    .cardValue{
+        display: flex;
+        font-size: 12.5px;
+        text-align: center;
+        }
+       
+        .logoSize{
+            width: 1em;
+            height: 1em;     
+        }
+         
+        .centerUp{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            margin-bottom: 45px;
+        }
+        
+        .kingLogo{
+            width: 1.5em;
+            height: 1.5em;
+            margin-bottom: 2.5px;
+            
+        }
+        .queenLogo{
+            width: 1.5em;
+            height: 1.5em;
+            margin-bottom: 2.5px;
+        }
+        
+        .jackLogo{
+            width: 1.5em;
+            height: 1.5em;
+            margin-bottom: 2.5px;
+        }
+        
+        .cardTextFormatRed{
+            text-decoration: 4px solid;
+            text-align: center;
+            color: red;
+            font-size: 7.5px;
+        
+        }
+        
+        .cardTextFormat{
+            text-decoration: 4px solid;
+            text-align: center;
+            font-size: 7.5px;
+        
+        }
+        
+        .numberLogo{
+            width: 10px;
+            height: 10px;
+            align-self: center;
+            
+        }
+        
+        .numberLogoAdj{
+            display: flex;
+            flex-direction: column;
+        }
+
+        
+
+}

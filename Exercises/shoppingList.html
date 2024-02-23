@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping list example</title>
+    <style>
+      li {
+        margin-bottom: 10px;
+      }
+
+      li button {
+        font-size: 8px;
+        margin-left: 20px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>My shopping list</h1>
+
+    <div>
+      <label for="item">Enter a new item:</label>
+      <input type="text" name="item" id="item">
+      <button class="add-item">Add item</button>
+    </div>
+
+    <ul>  
+    </ul>
+
+    <script>
+
+        function deleteItem(event){
+            event.target.parentElement.remove();
+        }
+
+        const itemElement = document.getElementById("item");
+        itemElement.addEventListener("focus", ev =>{
+            ev.target.value = "";
+        }) ; 
+            
+        const addItemButton = document.getElementsByClassName("add-item")[0];
+          if (addItemButton !== undefined) {
+          addItemButton.addEventListener("click", () => {
+            const liElement = document.createElement("li");
+            const buttonElement = document.createElement("button");
+            buttonElement.textContent = "DEL";
+            buttonElement.addEventListener("click", deleteItem);
+            const textContent = document.getElementById("item").value;
+          //  document.getElementById("item").value = "";
+            liElement.textContent = textContent;
+          document.getElementsByTagName("ul")[0].appendChild(liElement).appendChild(buttonElement);
+          });
+        }
+
+       /*   const addItemButton = document.getElementsByClassName("add-item")[0];
+          if (addItemButton !== undefined) {
+          addItemButton.addEventListener("click", () => {
+            const liElement = document.createElement("li");
+            const textContent = document.getElementById("item").value;
+            document.getElementById("item").value = "";
+            liElement.textContent = textContent;
+          document.getElementsByTagName("ul")[0].appendChild(liElement)
+          }); 
+          }*/ //para criar lista
+
+
+
+        /*  const addItemButton = document.getElementsByClassName("add-item")[0];
+          if (addItemButton !== undefined) {
+          addItemButton.addEventListener("click", () => {
+            console.log("I got clicked");
+          }); 
+          }*/ //para ver no console
+
+    </script>
+  </body>
+</html>

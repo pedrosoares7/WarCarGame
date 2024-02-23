@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping list example</title>
+    <style>
+        li {
+            margin-bottom: 10px;
+        }
+
+        li button {
+            font-size: 8px;
+            margin-left: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+<h1>My shopping list</h1>
+
+<div>
+    <label for="item">Enter a new item:</label>
+    <input type="text" onfocus="clearInput(event)" name="item" id="item">
+    <button class="add-item">Add item</button>
+</div>
+
+<ul>
+</ul>
+
+<script>
+    let counter = localStorage.getItem("counter") ?? 0;
+    console.log(`Counter is ${counter}`);
+
+    function deleteItem(event) {
+        event.target.parentElement.remove();
+        const itemId = event.target.parentElement.id;
+        console.log(`Will delete ${itemId}..`);
+        localStorage.removeItem(itemId);
+    }
+
+    function clearInput(event) {
+        event.target.value = "";
+    }
+
+    function createItem(key, value) {
+        // create li element
+        const liElement = document.createElement("li");
+        const textElement = document.createTextNode(value);
+        liElement.appendChild(textElement);
+
+        // create button element
+        const buttonElement = document.createElement("button");
+        buttonElement.className = 'delete-item';
+        buttonElement.addEventListener("click", deleteItem);
+        const buttonTextElement = document.createTextNode("Delete");
+        buttonElement.appendChild(buttonTextElement);
+        liElement.appendChild(buttonElement);
+
+        // find ul element and add new item element to it
+        const ulElement = document.getElementsByTagName("ul")[0];
+        liElement.id = key;
+        if (ulElement) {
+            ulElement.appendChild(liElement);
+        }
+
+        return liElement;
+    }
+
+    const addItemButton = document.getElementsByClassName("add-item")[0];
+    if (addItemButton !== undefined) {
+        addItemButton.addEventListener("click", () => {
+            const ulElement = document.getElementsByTagName("ul")[0];
+
+            // get item input text and then clear its content
+            const itemElement = document.getElementById("item");
+            const itemText = itemElement.value;
+
+            counter++;
+
+            const itemKey = `shopping-list-item-${counter}`;
+            const newItem = createItem(itemKey, itemText);
+
+            localStorage.setItem("counter", counter);
+            localStorage.setItem(newItem.id, itemText);
+        });
+    }
+
+    window.addEventListener("load", () => {
+        for (const key of Object.keys(localStorage).sort()) {
+            if (key !== "counter") {
+                console.log(key);
+                createItem(key, localStorage.getItem(key));
+            }
+        }
+    });
+</script>
+</body>
+</html>
